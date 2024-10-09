@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import LoginValidation from "../schemas/LoginValidation";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { LinearGradient } from "expo-linear-gradient";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/iniciarSesion.png";
 import LoadingSpinner from "../Loading/LoadingSpinner";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/reducers/userSlice";
@@ -80,10 +80,21 @@ export default function Login() {
           className="h-full w-full items-center justify-center p-10"
         >
           {/* Título */}
-          <View className="flex items-center w-full mb-10">
-            <View className="w-full h-auto mb-10">
-              <Image className="w-full h-40" source={logo} />
+          <View className="flex items-center w-full mb-10 -mt-12">
+            <View className="flex justify-center items-center w-full h-auto mb-10">
+              <Image style={{ width: "220px", height: "220px" }} source={logo} />
             </View>
+            <Animated.View
+              entering={FadeInDown.delay(200).springify()}
+              className="w-full flex justify-center items-center mb-2"
+            >
+              <Text className="text-secondary uppercase text-2xl -mt-20 mb-2 font-semibold">
+                Data pet
+              </Text>
+              <Text className="text-white text-base mb-2 font-semibold">
+                El mejor amigo de tu amigo
+              </Text>
+            </Animated.View>
             <View className="flex flex-row justify-between w-full">
               <TouchableOpacity onPress={() => navigation.push("Login")}>
                 <Text className="text-white font-bold text-lg border-b border-secondary/25 pb-2">

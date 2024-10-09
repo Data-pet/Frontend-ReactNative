@@ -1,8 +1,8 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
-import { View, ActivityIndicator, Text, StyleSheet } from "react-native";
+import { View, ActivityIndicator, Text, StyleSheet, Image } from "react-native";
 import { FadeInDown } from "react-native-reanimated";
-
+import imageSource from "../../assets/cargando.png"
 const LoadingSpinner = ({
   message = "Cargando...",
   size = "large",
@@ -17,6 +17,11 @@ const LoadingSpinner = ({
         end={{ x: 1, y: 1 }}
         className="h-full w-full items-center justify-center p-10"
       >
+        <Image
+          source={imageSource} // Fuente de la imagen
+          style={{ width: 250, height: 250, marginBottom: 10 }} // Ajusta el tamaño según necesites
+          resizeMode="contain" // Ajusta cómo se debe escalar la imagen
+        />
         <ActivityIndicator size={size} color={color} />
         <Text style={styles.message}>{message}</Text>
       </LinearGradient>

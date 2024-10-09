@@ -11,7 +11,7 @@ import { LinearGradient } from "expo-linear-gradient";
 export class NavBar extends Component {
   render() {
     return (
-      <View className="absolute bottom-0 w-full h-16">
+      <View className="absolute bottom-0 w-full h-14">
         <LinearGradient
           entering={FadeInDown.delay(1000).springify()}
           colors={["#0C1D40", "#1E3A8D", "#0C1D40"]}
@@ -29,7 +29,7 @@ export class NavBar extends Component {
 
           <Animated.View
             entering={BounceIn.delay(400).springify()}
-            className="mb-5 items-center border border-white justify-center rounded-full w-20 h-20 bg-secondary"
+            className="mb-3 items-center justify-center rounded-full w-16 h-16 bg-secondary"
           > 
             <Home name="home" size={20} color="#fff" />
           </Animated.View>
