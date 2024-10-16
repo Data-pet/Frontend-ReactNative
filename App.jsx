@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 // Redux
 import { Provider } from "react-redux";
@@ -14,10 +15,11 @@ import Login from "./src/screens/Login.jsx";
 import VerifyAccess from "./src/Ahut/VerifyAccess.jsx";
 
 // Toast
-import Toast from 'react-native-toast-message'; // Importa Toast
+import Toast from "react-native-toast-message";
 
 // Styles
 import { NativeWindStyleSheet } from "nativewind";
+import Home2 from "./src/screens/Home2.jsx";
 
 NativeWindStyleSheet.setOutput({
   default: "native",
@@ -28,20 +30,22 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Login"
-          screenOptions={{ headerShown: false }}
-        >
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Register" component={Register} />
-          {/* Rutas protegidas */}
-          <Stack.Screen name="ProtectedRoutes" component={ProtectedRoutes} />
-        </Stack.Navigator>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Login"
+            screenOptions={{ headerShown: false }}
+          >
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="Register" component={Register} />
+            {/* Rutas protegidas */}
+            <Stack.Screen name="ProtectedRoutes" component={ProtectedRoutes} />
+          </Stack.Navigator>
 
-        {/* Componente Toast global */}
-        <Toast />
-      </NavigationContainer>
+          {/* Componente Toast global */}
+          <Toast />
+        </NavigationContainer>
+      </SafeAreaProvider>
     </Provider>
   );
 }
@@ -49,9 +53,11 @@ export default function App() {
 const ProtectedRoutes = () => {
   return (
     <VerifyAccess>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
+      <SafeAreaProvider>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+      </SafeAreaProvider>
     </VerifyAccess>
   );
 };

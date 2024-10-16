@@ -36,6 +36,8 @@ export default function Login() {
             "Has iniciado sesión correctamente, " +
             response.data.nombre +
             " 🎉",
+          autoHide: true, // Asegura que el toast se ocultará automáticamente
+          visibilityTime: 1500,
         });
         dispatch(setUser(response.data));
         dispatch(setAuthenticated(true));
@@ -82,7 +84,10 @@ export default function Login() {
           {/* Título */}
           <View className="flex items-center w-full mb-10 -mt-12">
             <View className="flex justify-center items-center w-full h-auto mb-10">
-              <Image style={{ width: "220px", height: "220px" }} source={logo} />
+              <Image
+                style={{ width: "220px", height: "220px" }}
+                source={logo}
+              />
             </View>
             <Animated.View
               entering={FadeInDown.delay(200).springify()}
@@ -110,7 +115,10 @@ export default function Login() {
           </View>
 
           <Formik
-            initialValues={{ email: "brunobrodon75@gmail.com", password: "Qwertty" }}
+            initialValues={{
+              email: "brunobrodon75@gmail.com",
+              password: "Qwertty",
+            }}
             validationSchema={LoginValidation}
             onSubmit={handleSubmit}
             className="w-full"
