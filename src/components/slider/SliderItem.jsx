@@ -8,7 +8,7 @@ import Animated, {
 } from "react-native-reanimated";
 import mancha from "../../../assets/Mancha.png";
 import pata from "../../../assets/pata.png";
-import pajaro from "../../../assets/pescado.png";
+import pajaro from "../../../assets/pajaro.png";
 
 const SliderItem = ({ item, index, scrollX }) => {
   const { width } = Dimensions.get("window");

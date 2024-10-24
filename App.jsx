@@ -20,6 +20,7 @@ import Toast from "react-native-toast-message";
 // Styles
 import { NativeWindStyleSheet } from "nativewind";
 import Home2 from "./src/screens/Home2.jsx";
+import RegisterPet from "./src/screens/RegisterPet.jsx";
 
 NativeWindStyleSheet.setOutput({
   default: "native",
@@ -56,6 +57,7 @@ const ProtectedRoutes = () => {
       <SafeAreaProvider>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Register-pet" component={RegisterPet} />
         </Stack.Navigator>
       </SafeAreaProvider>
     </VerifyAccess>

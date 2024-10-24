@@ -3,8 +3,10 @@ import Animated, { FadeInRight } from "react-native-reanimated";
 import { LinearGradient } from "expo-linear-gradient";
 import LogoImage from "../../../assets/perrito y gato ecimados.png"; // Asegúrate que este es el archivo correcto
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const ToastAddYourPet = () => {
+  const navigation = useNavigation();
   return (
     <Animated.View
       entering={FadeInRight.delay(1500).springify()}
@@ -24,7 +26,7 @@ const ToastAddYourPet = () => {
             ¡No dejes a tu peludo amigo fuera! Regístralo y guarda todos sus
             secretos en la app.
           </Text>
-          <TouchableOpacity className="bg-primary rounded-lg px-3 py-2 justify-center items-center">
+          <TouchableOpacity  onPress={() => navigation.navigate('Register-pet')} className="bg-primary rounded-lg px-3 py-2 justify-center items-center">
             <Text className="text-white text-base font-bold">
               ¡Registrar ahora!
             </Text>

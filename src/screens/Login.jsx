@@ -117,7 +117,7 @@ export default function Login() {
           <Formik
             initialValues={{
               email: "brunobrodon75@gmail.com",
-              password: "Qwertty",
+              password: "HolaMundo123",
             }}
             validationSchema={LoginValidation}
             onSubmit={handleSubmit}

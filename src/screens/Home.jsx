@@ -4,9 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
 import Animated, {
-  FadeIn,
   FadeInDown,
-  FadeInUp,
 } from "react-native-reanimated";
 import NavBar from "../components/nav bar/NavBar";
 import ToastWelcome from "../components/toast/ToastWelcome";
@@ -21,19 +19,19 @@ export default function Home() {
   const pets = [
     {
       id: 1,
-      name: "Dog",
+      name: "Ejemplo",
       image:
         "https://images.pexels.com/photos/422220/pexels-photo-422220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
       id: 2,
-      name: "Cat",
+      name: "Ejemplo",
       image:
         "https://images.pexels.com/photos/422220/pexels-photo-422220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
       id: 3,
-      name: "Bird",
+      name: "Ejemplo",
       image:
         "https://images.pexels.com/photos/422220/pexels-photo-422220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
