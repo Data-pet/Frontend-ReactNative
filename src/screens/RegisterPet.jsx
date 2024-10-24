@@ -3,7 +3,8 @@ import React from "react";
 import LogoImage from "../../assets/perrito y gato.png";
 import { LinearGradient } from "expo-linear-gradient";
 import { FadeInDown } from "react-native-reanimated";
-
+import { Formik } from "formik";
+import { initialValuesRegisterPet, validationSchemaRegisterPet } from "../schemas/RegisterPet";
 const RegisterPet = () => {
   return (
     <View className="w-full min-h-screen h-auto ">
@@ -14,8 +15,8 @@ const RegisterPet = () => {
         end={{ x: 1, y: 1 }}
         className="h-full w-full"
       >
-        <View className="flex h-auto w-full items-start mt-14 justify-centert relative">
-          <Text className="text-white text-3xl font-bold ml-5">
+        <View className="flex h-auto w-full items-start mt-14 justify-centert relative p-5">
+          <Text className="text-white text-3xl font-bold">
             Registrar Mascota
           </Text>
           <Image
@@ -23,6 +24,16 @@ const RegisterPet = () => {
             style={{ width: 120, height: 120 }}
             source={LogoImage}
           />
+          <View className="mt-6">
+            <Text className="text-white"> ¡Hola! Para poder registrar a tu amiguito, necesitamos que nos compartas algunos datos. ¡Gracias por ayudarnos! </Text>
+          </View>
+          <Formik
+            initialValues={{
+              initialValuesRegisterPet,
+              validationSchemaRegisterPet,
+            }}>
+
+          </Formik>
         </View>
       </LinearGradient>
     </View>
