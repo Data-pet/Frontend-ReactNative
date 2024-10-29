@@ -22,6 +22,7 @@ export default function Form2() {
   const dispatch = useDispatch();
   const nombre = useSelector((state) => state.register.nombre);
   const [loading, setLoading] = useState(false);
+  const user = useSelector((state) => state.user.user);
   const handleSubmit = async (values) => {
     // Prepara los datos a enviar al backend
     const dataToSend = {
@@ -40,11 +41,7 @@ export default function Form2() {
     try {
       setLoading(true);
       // Realiza la petición al backend usando axios
-      const response = await axios.post("/usuarios", dataToSend, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post("/usuarios", dataToSend);
 
       // Si la respuesta es exitosa
       if (response.status >= 200 && response.status < 300) {
@@ -87,10 +84,10 @@ export default function Form2() {
   return (
     <ScrollView
       className="w-full h-auto"
-      contentContainerStyle={{ padding: 20 }}
+      contentContainerStyle={{ padding: 10 }}
     >
       {loading ? (
-        <View className="w-full min-h-screen"> 
+        <View className="w-full min-h-screen">
           <LoadingSpinner message="Registrando..." />
         </View>
       ) : (
@@ -121,7 +118,6 @@ export default function Form2() {
               values,
               errors,
               touched,
-              setFieldValue, // Añadido para manejar campos personalizados
             }) => (
               <View className="w-full">
                 {/* Apellido */}

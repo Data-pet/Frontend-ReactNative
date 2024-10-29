@@ -34,9 +34,10 @@ export default function App() {
       <SafeAreaProvider>
         <NavigationContainer>
           <Stack.Navigator
-            initialRouteName="Login"
+            initialRouteName="Register-pet"
             screenOptions={{ headerShown: false }}
           >
+            <Stack.Screen name="Register-pet" component={RegisterPet} />
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
             {/* Rutas protegidas */}
@@ -57,7 +58,6 @@ const ProtectedRoutes = () => {
       <SafeAreaProvider>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Register-pet" component={RegisterPet} />
         </Stack.Navigator>
       </SafeAreaProvider>
     </VerifyAccess>
