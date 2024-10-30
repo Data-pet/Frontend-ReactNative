@@ -38,18 +38,15 @@ export default function Home() {
   ];
   return (
     <View className="w-full min-h-screen h-auto ">
-      <LinearGradient
+      <View
         entering={FadeInDown.delay(1000).springify()}
-        colors={["#0C1D55", "#1E3A7D", "#4A6BBE"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
         className="h-full w-full"
       >
         <Header />
         <ToastWelcome />
         <ToastAddYourPet />
         {!pets ? <NotFoundPets /> : <Slider data={pets} />}
-      </LinearGradient>
+      </View>
       <NavBar />
     </View>
   );

@@ -93,10 +93,10 @@ export default function Form2() {
       ) : (
         <View>
           <Animated.View className="mb-10 w-full flex items-start justify-start gap-2 flex-col">
-            <Text className="font-extrabold text-4xl text-secondary">
+            <Text className="font-extrabold text-4xl text-primary">
               {nombre},
             </Text>
-            <Text className="text-white text-xl w-full">
+            <Text className="text-xl w-full">
               es un gusto tenerte por aqui. Continuemos con tu registro
             </Text>
 
@@ -126,12 +126,12 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Apellido <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="text"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Ej. Ramirez"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("apellido")}
@@ -152,12 +152,12 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       DNI <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="numeric"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Ej. 22 333 444"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("DNI")}
@@ -176,12 +176,12 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Teléfono <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="numeric"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Ej. 123456789"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("telefono")}
@@ -202,11 +202,11 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Ciudad <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="ciudad"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("ciudad")}
@@ -227,11 +227,11 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Barrio <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="barrio"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("barrio")}
@@ -252,11 +252,11 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Calle <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="calle"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("calle")}
@@ -277,12 +277,12 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Correo <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="email-address"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="correo@dominio.com"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("correo")}
@@ -302,11 +302,11 @@ export default function Form2() {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-2 border-b border-secondary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Contraseña <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Contraseña"
                       placeholderTextColor="#D3D3D3"
                       secureTextEntry
@@ -334,7 +334,7 @@ export default function Form2() {
                   entering={FadeInDown.delay(800).springify()}
                   className="w-full flex flex-row gap-2 items-center"
                 >
-                  <Text className="text-white">¿Ya tienes una cuenta?</Text>
+                  <Text className="">¿Ya tienes una cuenta?</Text>
                   <TouchableOpacity onPress={() => navigation.push("Login")}>
                     <Text className="font-bold text-info">Iniciar Sesión</Text>
                   </TouchableOpacity>

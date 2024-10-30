@@ -36,14 +36,14 @@ export default function Form1() {
           <View className="w-full">
             <Animated.View
               entering={FadeInDown.delay(200).springify()}
-              className="w-full mb-2 border-b border-secondary/25 pb-2"
+              className="w-full mb-2 border-b border-primary/25 pb-2"
             >
-              <Text className="text-white font-bold mb-4">
+              <Text className="font-bold mb-4">
                 ¿Cómo es tu nombre?
               </Text>
               <TextInput
                 initialValues={values.nombre}
-                className="text-white mb-2"
+                className="mb-2"
                 placeholder="Ej. Jhon Doe"
                 placeholderTextColor="#D3D3D3"
                 onChangeText={handleChange("nombre")}
@@ -66,7 +66,7 @@ export default function Form1() {
               entering={FadeInDown.delay(800).springify()}
               className="w-full flex flex-row gap-2 items-center"
             >
-              <Text className="text-white">¿Ya tienes una cuenta?</Text>
+              <Text>¿Ya tienes una cuenta?</Text>
               <TouchableOpacity onPress={() => navigation.push("Login")}>
                 <Text className="font-bold text-info">Iniciar Sesión</Text>
               </TouchableOpacity>

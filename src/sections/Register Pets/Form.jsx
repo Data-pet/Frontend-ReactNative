@@ -85,7 +85,7 @@ const FormRegisterPet = () => {
         <View className="w-full min-h-screen h-auto">
           <View className="w-full mt-6">
             <View className="-ml-1 mb-4">
-              <Text className="text-white">
+              <Text>
                 ¡Hola! Para poder registrar a tu amiguito, necesitamos que nos
                 compartas algunos datos. ¡Gracias por ayudarnos!
               </Text>
@@ -108,14 +108,14 @@ const FormRegisterPet = () => {
                 <View className="w-full">
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className="font-bold mb-4 gap-1">
                       Nombre <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="text"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Nombre de tu amigo"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("nombre")}
@@ -131,14 +131,14 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Raza <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="text"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Raza de tu mascota"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("raza")}
@@ -154,14 +154,14 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Descripción <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="text"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Una breve descripción de tu mascota"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("descripcion")}
@@ -177,14 +177,14 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Alegrias
                     </Text>
                     <TextInput
                       keyboardType="text"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Indícanos si tu mascota tiene alguna alergia importante"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("alergias")}
@@ -200,14 +200,14 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Edad <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="numeric"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Indícanos la edad de tu mascota en años"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("edad")}
@@ -223,14 +223,14 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       Peso <Text className="text-error">*</Text>
                     </Text>
                     <TextInput
                       keyboardType="numeric"
-                      className="text-white mb-2"
+                      className=" mb-2"
                       placeholder="Peso apróximado de tu mascota"
                       placeholderTextColor="#D3D3D3"
                       onChangeText={handleChange("peso")}
@@ -246,15 +246,15 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       ¿Está castrado? <Text className="text-error">*</Text>
                     </Text>
                     <View className="flex-row mb-2">
                       <Text
                         onPress={() => setFieldValue("castrado", true)}
-                        className={`flex-1 text-center text-white px-4 py-2 rounded-full mx-1 ${
+                        className={`flex-1 text-center  px-4 py-2 rounded-full mx-1 text-white  ${
                           values.castrado ? "bg-secondary" : "bg-primary"
                         }`}
                       >
@@ -262,7 +262,7 @@ const FormRegisterPet = () => {
                       </Text>
                       <Text
                         onPress={() => setFieldValue("castrado", false)}
-                        className={`flex-1 text-center text-white px-4 py-2 rounded-full mx-1 ${
+                        className={`flex-1 text-center  px-4 py-2 rounded-full mx-1 text-white ${
                           values.castrado === false
                             ? "bg-secondary"
                             : "bg-primary"
@@ -280,9 +280,9 @@ const FormRegisterPet = () => {
 
                   <Animated.View
                     entering={FadeInDown.delay(200).springify()}
-                    className="w-full mb-4 border-b border-secondary/25 pb-2"
+                    className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className="text-white font-bold mb-4 gap-1">
+                    <Text className=" font-bold mb-4 gap-1">
                       ¿Que tipo de mascota vamos a registrar?
                     </Text>
                     <View className="flex-row flex-wrap mb-4">
@@ -312,20 +312,20 @@ const FormRegisterPet = () => {
                           onPress={() => setFieldValue("tipo", mascota.value)}
                           className={`flex-row items-center justify-center px-4 py-2 rounded-full mx-1 my-1 ${
                             values.tipo === mascota.value
-                              ? `${mascota.color} text-white`
+                              ? `${mascota.color} `
                               : "bg-gray-200 text-black"
                           }`}
                         >
                           {mascota.label}
                           {values.tipo === mascota.value && (
-                            <Text className="ml-4 text-white">✓</Text>
+                            <Text className="ml-4 ">✓</Text>
                           )}
                         </Text>
                       ))}
                     </View>
                   </Animated.View>
                   <TouchableOpacity
-                    className="w-full p-3 bg-secondary rounded-full mb-4"
+                    className="w-full p-3 bg-[#E72D7C] rounded-full mb-4"
                     onPress={formikSubmit}
                   >
                     <Text className="text-center font-bold text-white ">

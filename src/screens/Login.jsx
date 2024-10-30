@@ -74,11 +74,8 @@ export default function Login() {
       {loading ? (
         <LoadingSpinner message="Iniciando sesión..." />
       ) : (
-        <LinearGradient
+        <View
           entering={FadeInDown.delay(1000).springify()}
-          colors={["#0C1D55", "#1E3A7D", "#4A6BBE"]} // Colores del gradiente
-          start={{ x: 0, y: 0 }} // Inicio en la esquina superior izquierda
-          end={{ x: 1, y: 1 }}
           className="h-full w-full items-center justify-center p-10"
         >
           {/* Título */}
@@ -93,21 +90,21 @@ export default function Login() {
               entering={FadeInDown.delay(200).springify()}
               className="w-full flex justify-center items-center mb-2"
             >
-              <Text className="text-secondary uppercase text-2xl -mt-20 mb-2 font-semibold">
+              <Text className="text-primary uppercase text-4xl -mt-20 mb-2 font-semibold">
                 Data pet
               </Text>
-              <Text className="text-white text-base mb-2 font-semibold">
+              <Text className="text-primary text-base mb-2 font-semibold">
                 El mejor amigo de tu amigo
               </Text>
             </Animated.View>
             <View className="flex flex-row justify-between w-full">
               <TouchableOpacity onPress={() => navigation.push("Login")}>
-                <Text className="text-white font-bold text-lg border-b border-secondary/25 pb-2">
+                <Text className="font-bold text-lg border-b border-primary/25 pb-2">
                   Iniciar Sesión
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.push("Register")}>
-                <Text className="text-white font-bold text-lg">
+                <Text className="font-bold text-lg">
                   Registrarse
                 </Text>
               </TouchableOpacity>
@@ -134,13 +131,13 @@ export default function Login() {
               <View className="items-center w-full">
                 <Animated.View
                   entering={FadeInDown.delay(200).springify()}
-                  className="w-full mb-2 border-b border-secondary/25 pb-2"
+                  className="w-full mb-2 border-b border-primary/25 pb-2"
                 >
-                  <Text className="text-white mb-2 font-semibold">
+                  <Text className=" mb-2 font-semibold">
                     Tú Correo electrónico <Text className="text-error">*</Text>
                   </Text>
                   <TextInput
-                    className="text-white mb-2"
+                    className=" mb-2"
                     placeholder="correo@dominio.com"
                     placeholderTextColor="#D3D3D3"
                     onChangeText={handleChange("email")}
@@ -153,13 +150,13 @@ export default function Login() {
                 )}
                 <Animated.View
                   entering={FadeInDown.delay(400).springify()}
-                  className="w-full mb-2 border-b border-secondary/25 pb-2"
+                  className="w-full mb-2 border-b border-primary/25 pb-2"
                 >
-                  <Text className="text-white mb-2 font-semibold">
+                  <Text className=" mb-2 font-semibold">
                     Tú Cotraseña <Text className="text-error">*</Text>
                   </Text>
                   <TextInput
-                    className="text-white mb-2"
+                    className=" mb-2"
                     placeholder="Contraseña"
                     placeholderTextColor="#D3D3D3"
                     secureTextEntry
@@ -181,7 +178,7 @@ export default function Login() {
                     entering={FadeInDown.delay(600).springify()}
                     className="flex-row gap-2 my-5"
                   >
-                    <Text className="text-white">
+                    <Text className="">
                       ¿Olvidaste tu contraseña?
                     </Text>
                     <TouchableOpacity onPress={() => navigation.push("Signup")}>
@@ -193,7 +190,7 @@ export default function Login() {
                     className="w-full p-3 bg-secondary rounded-full mb-4"
                     onPress={formikSubmit}
                   >
-                    <Text className="text-center font-bold text-white ">
+                    <Text className="text-center font-bold  text-white">
                       Iniciar Sesión
                     </Text>
                   </TouchableOpacity>
@@ -203,7 +200,7 @@ export default function Login() {
                   entering={FadeInDown.delay(800).springify()}
                   className="w-full flex flex-row gap-2 items-center"
                 >
-                  <Text className="text-white">¿No tienes una cuenta?</Text>
+                  <Text className="">¿No tienes una cuenta?</Text>
                   <TouchableOpacity onPress={() => navigation.push("Register")}>
                     <Text className="font-bold text-info">Registrarme</Text>
                   </TouchableOpacity>
@@ -211,7 +208,7 @@ export default function Login() {
               </View>
             )}
           </Formik>
-        </LinearGradient>
+        </View>
       )}
     </View>
   );
