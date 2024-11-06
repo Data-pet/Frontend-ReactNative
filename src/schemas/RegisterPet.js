@@ -8,7 +8,7 @@ export const initialValuesRegisterPet = {
   edad: null,
   peso: null,
   castrado: false,
-  tipo: "gato",
+  tipo: "Gato",
 };
 
 export const validationSchemaRegisterPet = Yup.object().shape({

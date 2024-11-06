@@ -26,10 +26,10 @@ export default function Form2() {
   const handleSubmit = async (values) => {
     // Prepara los datos a enviar al backend
     const dataToSend = {
-      nombre,
+      name: nombre,
       DNI: values.DNI,
       apellido: values.apellido,
-      contrasena: values.contrasenia,
+      password: values.contrasenia,
       correo: values.correo,
       tipoUsuario: "cuidador",
       telefono: values.telefono,

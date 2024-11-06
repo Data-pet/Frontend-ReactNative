@@ -14,7 +14,7 @@ const NotFoundPets = () => {
         style={{ width: 180, height: 180 }}
         source={petsNotFound}
       />
-      <Text className="text-white font-bold text-center">
+      <Text className="text-secondary text-lg font-bold text-center">
         ¡Hola, humano! Aún no encontré ninguna mascota registrada a tu nombre.
       </Text>
     </Animated.View>

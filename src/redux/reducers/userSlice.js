@@ -14,7 +14,7 @@ const initialState = {
 };
 
 const authSlice = createSlice({
-  name: "steperStates",
+  name: "user",
   initialState,
   reducers: {
     setUser: (state, action) => {

@@ -5,8 +5,7 @@ import FormRegisterPet from "../sections/Register Pets/Form";
 
 const RegisterPet = () => {
   return (
-    <View className="w-full min-h-screen h-auto">
-      
+    <View className="w-full min-h-screen h-auto pb-10">
         <View className="flex  flex-colh-auto w-full items-start mt-14 justify-centert relative p-5">
           <Text className="text-3xl font-bold text-[#E72D7C]">
             Registrar Mascota

@@ -13,12 +13,32 @@ import {
 } from "../../schemas/RegisterPet";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import axios from "../../api/axios.js";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LoadingSpinner from "../../Loading/LoadingSpinner.jsx";
 import Toast from "react-native-toast-message";
+import { useNavigation } from "@react-navigation/native";
+import { mascotasUsuario } from "../../api/pets";
+import { setMascotas } from "../../redux/reducers/petsSlice";
+
 const FormRegisterPet = () => {
+  const navigation = useNavigation();
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state.user.user);
+  const idUsuario = useSelector((state) => state.user.user.idUsuario);
+  const dispatch = useDispatch();
+
+  const obtenerMascotas = async () => {
+    try {
+      setLoading(true);
+      const res = await mascotasUsuario(idUsuario);
+      dispatch(setMascotas(res));
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSubmit = async (values) => {
     // Prepara los datos a enviar al backend
     const dataToSend = {
@@ -46,11 +66,8 @@ const FormRegisterPet = () => {
           text1: "¡Registro Exitoso!",
           text2: "Tu mascota ha sido creada correctamente 🎉",
         });
-
-        // Redirigir a la pantalla de Login después de un breve retraso (3 segundos)
-        setTimeout(() => {
-          navigation.navigate("Login");
-        }, 3000);
+        await obtenerMascotas();
+        navigation.navigate("Home");
       } else {
         // Mostrar mensaje de error si la respuesta no es exitosa
         Toast.show({
@@ -179,9 +196,7 @@ const FormRegisterPet = () => {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className=" font-bold mb-4 gap-1">
-                      Alegrias
-                    </Text>
+                    <Text className=" font-bold mb-4 gap-1">Alegrias</Text>
                     <TextInput
                       keyboardType="text"
                       className=" mb-2"
@@ -255,7 +270,7 @@ const FormRegisterPet = () => {
                       <Text
                         onPress={() => setFieldValue("castrado", true)}
                         className={`flex-1 text-center  px-4 py-2 rounded-full mx-1 text-white  ${
-                          values.castrado ? "bg-secondary" : "bg-primary"
+                          values.castrado ? "bg-primary" : "bg-gray-400"
                         }`}
                       >
                         Sí
@@ -264,8 +279,8 @@ const FormRegisterPet = () => {
                         onPress={() => setFieldValue("castrado", false)}
                         className={`flex-1 text-center  px-4 py-2 rounded-full mx-1 text-white ${
                           values.castrado === false
-                            ? "bg-secondary"
-                            : "bg-primary"
+                            ? "bg-primary"
+                            : "bg-gray-400"
                         }`}
                       >
                         No
@@ -289,22 +304,22 @@ const FormRegisterPet = () => {
                       {[
                         {
                           label: "Gato",
-                          value: "gato",
+                          value: "Gato",
                           color: "bg-purple-400",
                         },
 
-                        { label: "Pez", value: "pez", color: "bg-blue-400" },
+                        { label: "Pez", value: "Pez", color: "bg-blue-400" },
                         {
                           label: "Conejo",
-                          value: "conejo",
+                          value: "Conejo",
                           color: "bg-pink-400",
                         },
                         {
                           label: "Perro",
-                          value: "perro",
+                          value: "Perro",
                           color: "bg-yellow-400",
                         },
-                        { label: "Ave", value: "ave", color: "bg-green-400" },
+                        { label: "Ave", value: "Ave", color: "bg-green-400" },
                         { label: "Otra", value: "Otra", color: "bg-gray-400" },
                       ].map((mascota) => (
                         <Text

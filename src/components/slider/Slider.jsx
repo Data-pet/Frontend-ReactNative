@@ -7,14 +7,20 @@ import Animated, {
   useSharedValue,
 } from "react-native-reanimated";
 import SliderItem from "./SliderItem";
+import { useNavigation } from "@react-navigation/native";
 
 const Slider = ({ data }) => {
   const scrollX = useSharedValue(0);
+  const navigation = useNavigation();
   const onScrollHandler = useAnimatedScrollHandler({
     onScroll: (e) => {
       scrollX.value = e.contentOffset.x;
     },
   });
+
+  const handlePressItem = (item) => {
+    navigation.navigate("PetDetails", { item }); // Navega a la vista detallada y pasa el ítem
+  };
   return (
     <Animated.View
       entering={FadeInRight.delay(2000).springify()}
@@ -23,7 +29,12 @@ const Slider = ({ data }) => {
       <Animated.FlatList
         data={data}
         renderItem={({ item, index }) => (
-          <SliderItem item={item} index={index} scrollX={scrollX} />
+          <SliderItem
+            onPress={() => handlePressItem(item)}
+            item={item}
+            index={index}
+            scrollX={scrollX}
+          />
         )}
         horizontal
         showsHorizontalScrollIndicator={false}

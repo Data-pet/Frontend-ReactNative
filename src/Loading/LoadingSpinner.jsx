@@ -1,7 +1,5 @@
-import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { View, ActivityIndicator, Text, StyleSheet, Image } from "react-native";
-import { FadeInDown } from "react-native-reanimated";
 import imageSource from "../../assets/cargando.png"
 const LoadingSpinner = ({
   message = "Cargando...",

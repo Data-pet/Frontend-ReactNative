@@ -10,11 +10,11 @@ const ToastAddYourPet = () => {
   return (
     <Animated.View
       entering={FadeInRight.delay(1500).springify()}
-      className="w-full px-4 mt-6"
+      className="w-full px-4 "
     >
       <LinearGradient
         className="flex-row justify-between items-center p-4 rounded-lg"
-        colors={["#00D084", "#0E9C63"]} // Colores verdes
+        colors={["#00D084", "#108B6F"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >

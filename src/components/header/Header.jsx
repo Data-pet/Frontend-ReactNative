@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const user = useSelector((state) => state.user.user);
   return (
-    <View className="felx justify-between  items-center">
+    <View className="felx justify-between items-center">
       <View className="w-full mb-10 mt-8 h-20 py-2 bg-[#E72D7C] flex-row justify-between items-center px-4">
         <View className="flex flex-row items-center justify-center ">
           <Image
@@ -21,8 +21,8 @@ const Header = () => {
           </View>
         </View>
         <View className="flex flex-row items-center text-center w-auto">
-          <Text className="text-white text-xs">
-            {user.nombre} {user.apellido}
+          <Text className="text-white">
+            {user.name} {user.apellido}
           </Text>
         </View>
       </View>

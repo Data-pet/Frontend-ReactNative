@@ -4,8 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Formik } from "formik";
 import LoginValidation from "../schemas/LoginValidation";
 import Animated, { FadeInDown } from "react-native-reanimated";
-import { LinearGradient } from "expo-linear-gradient";
-import logo from "../../assets/iniciarSesion.png";
+import logo from "../../assets/dataPet.png";
 import LoadingSpinner from "../Loading/LoadingSpinner";
 import { useDispatch } from "react-redux";
 import { setUser } from "../redux/reducers/userSlice";
@@ -33,9 +32,7 @@ export default function Login() {
           type: "success",
           text1: "¡Sesión Exitosa!",
           text2:
-            "Has iniciado sesión correctamente, " +
-            response.data.nombre +
-            " 🎉",
+            "Has iniciado sesión correctamente, " + response.data.name + " 🎉",
           autoHide: true, // Asegura que el toast se ocultará automáticamente
           visibilityTime: 1500,
         });
@@ -80,22 +77,16 @@ export default function Login() {
         >
           {/* Título */}
           <View className="flex items-center w-full mb-10 -mt-12">
-            <View className="flex justify-center items-center w-full h-auto mb-10">
-              <Image
-                style={{ width: "220px", height: "220px" }}
-                source={logo}
-              />
-            </View>
             <Animated.View
               entering={FadeInDown.delay(200).springify()}
-              className="w-full flex justify-center items-center mb-2"
+              className="w-full flex felxc justify-center items-center mb-2"
             >
-              <Text className="text-primary uppercase text-4xl -mt-20 mb-2 font-semibold">
-                Data pet
-              </Text>
-              <Text className="text-primary text-base mb-2 font-semibold">
-                El mejor amigo de tu amigo
-              </Text>
+              <View className="flex justify-center items-center w-full h-auto mb-10">
+                <Image
+                  style={{ width: 370, height: 200, resizeMode: "contain" }}
+                  source={logo}
+                />
+              </View>
             </Animated.View>
             <View className="flex flex-row justify-between w-full">
               <TouchableOpacity onPress={() => navigation.push("Login")}>
@@ -104,9 +95,7 @@ export default function Login() {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.push("Register")}>
-                <Text className="font-bold text-lg">
-                  Registrarse
-                </Text>
+                <Text className="font-bold text-lg">Registrarse</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -178,9 +167,7 @@ export default function Login() {
                     entering={FadeInDown.delay(600).springify()}
                     className="flex-row gap-2 my-5"
                   >
-                    <Text className="">
-                      ¿Olvidaste tu contraseña?
-                    </Text>
+                    <Text className="">¿Olvidaste tu contraseña?</Text>
                     <TouchableOpacity onPress={() => navigation.push("Signup")}>
                       <Text className="font-bold text-info"> Recuperar</Text>
                     </TouchableOpacity>
