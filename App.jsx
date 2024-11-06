@@ -22,6 +22,8 @@ import { NativeWindStyleSheet } from "nativewind";
 import Home2 from "./src/screens/Home2.jsx";
 import RegisterPet from "./src/screens/RegisterPet.jsx";
 import PetDetails from "./src/screens/PetDetails.jsx";
+import Notices from "./src/screens/Notices.jsx";
+import UserScreen from "./src/screens/UserScreen.jsx";
 
 NativeWindStyleSheet.setOutput({
   default: "native",
@@ -60,6 +62,8 @@ const ProtectedRoutes = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="PetDetails" component={PetDetails} />
+          <Stack.Screen name="NewspaperScreen" component={Notices} />
+          <Stack.Screen name="UserScreen" component={UserScreen} />
         </Stack.Navigator>
       </SafeAreaProvider>
     </VerifyAccess>

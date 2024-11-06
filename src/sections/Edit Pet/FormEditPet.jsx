@@ -1,11 +1,6 @@
 import { Formik } from "formik";
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { mascotasUsuario, updatePet } from "../../api/pets";
 import { useNavigation } from "@react-navigation/native";
@@ -24,8 +19,8 @@ const FormEditPet = ({ item }) => {
     raza: item.raza,
     descripcion: item.descripcion,
     alergias: item.salud.alergias,
-    edad: item.salud.edad,
-    peso: item.salud.peso,
+    edad: Math.ceil(item.salud.edad),
+    peso: Math.ceil(item.salud.peso),
     castrado: item.salud.castrado,
     tipo: item.tipo,
   };

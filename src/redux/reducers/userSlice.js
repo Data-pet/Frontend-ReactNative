@@ -9,7 +9,13 @@ const initialState = {
     correo: "",
     tipoUsuario: "",
     telefono: "",
-    idDireccion: "",
+    idDireccion: 0,
+    direccion: {
+      idDireccion: 0,
+      Barrio: "",
+      Calle: "",
+      Ciudad: "",
+    },
   },
 };
 

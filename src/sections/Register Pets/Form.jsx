@@ -46,8 +46,8 @@ const FormRegisterPet = () => {
       raza: values.raza,
       descripcion: values.descripcion,
       alergias: values.alergias,
-      edad: values.edad,
-      peso: values.peso,
+      edad: Math.ceil(values.edad),
+      peso: Math.ceil(values.peso),
       castrado: values.castrado,
       tipo: values.tipo,
       idUsuario: user.idUsuario,
@@ -196,7 +196,7 @@ const FormRegisterPet = () => {
                     entering={FadeInDown.delay(200).springify()}
                     className="w-full mb-4 border-b border-primary/25 pb-2"
                   >
-                    <Text className=" font-bold mb-4 gap-1">Alegrias</Text>
+                    <Text className=" font-bold mb-4 gap-1">Alergias</Text>
                     <TextInput
                       keyboardType="text"
                       className=" mb-2"
